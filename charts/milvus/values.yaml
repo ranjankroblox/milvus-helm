@@ -42,7 +42,9 @@ service:
   type: ClusterIP
   port: 19530
   nodePort: ""
-  annotations: {}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: nlb
+    service.beta.kubernetes.io/aws-load-balancer-internal: "true"
   labels: {}
 
   ## List of IP addresses at which the Milvus service is available
